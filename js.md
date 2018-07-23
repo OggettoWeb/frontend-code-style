@@ -58,6 +58,23 @@ const height = 100;
 const width = 500;
 ```
 
+Когда переменных много, бывает очень сложно разобраться, где заканчивается блок объявлений:
+
+```js
+const firstNumber = randomize(firstFrom, firstTo),
+    step = randomize(stepFrom, stepTo),
+    progression = generateProgression(firstNumber, step, numbersQty),
+    emptyIndex = randomize(0, numbersQty),
+    rightAnswer = progression[emptyIndex],
+    rightAnswerIndex = randomize(0, answersQty),
+    answers = generateAnswers(
+        answersQty,
+        rightAnswer,
+        rightAnswerIndex,
+        generateAnswer.bind(null, rightAnswer)
+    );
+```
+
 ## Инкремент/декремент
 Вместо `++` используем более явное `+= 1`.
 
