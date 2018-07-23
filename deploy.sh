@@ -17,6 +17,6 @@ git add -A
 git commit -m 'deploy'
 
 # if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:oggetto-academy/frontend-code-style.git master:gh-pages
+git push -f git@github.com:OggettoWeb/frontend-code-style.git master:gh-pages
 
 cd -
