@@ -138,6 +138,16 @@ function showFirstPoint() {
 Допускается и рекомендуется отбивать пустой строкой логически связанные строки кода.
 
 ## Условные конструкции
+Используем [строгое равенство и неравенство](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Операторы_сравнения#Операторы_равенства) (`===` и `!==`) не полагаясь на приведение типов:
+
+```js
+// Плохо: так isZero('') вернет true
+const isZero = n => n == 0;
+
+// Хорошо
+const isZero = n => n === 0; // все ок
+```
+
 ### if/else
 Блок `else` нужно начинать на той же строке, на которой закрывается блок `if`:
 
@@ -216,15 +226,31 @@ const stickyHeaderHeight = windowWidth < 1025 ? headerHeight : stickyHeight;
 
 ```js
 // Плохо
-const greaterWidth = (width, height) => width < height;
-const listEmpty = listItems => listItems.length = 0;
+const greaterHeight = (width, height) => width < height;
+const listEmpty = listItems => listItems.length === 0;
 
 // Хорошо
 const isImageTall = (width, height) => width < height;
-const isListEmpty = listItems => listItems.length = 0;
+const isListEmpty = listItems => listItems.length === 0;
 ```
 
 При чтении кода будет сразу ясно, что `isListEmpty(menuItems)` — предикат и возвращает булево значение.
+
+[Операторы сравнения](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Операторы_сравнения) `===`, `<`, `>` и т. д. возвращают либо `true`, либо `false`. Поэтому при использовании этих операторов достаточно вернуть результат выражения без использования `if/else`:
+
+```js
+// Плохо: много ненужного кода
+function isListEmpty(listItems) {
+    if (listItems.length === 0) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Хорошо: оператор сравнения `===` и так вернет нужное булево значение
+const isListEmpty = listItems => listItems.length === 0;
+```
 
 ## Переменные с классами и айдишниками
 Классы и айдишники нужно сохранять в переменные без точки и решетки:
