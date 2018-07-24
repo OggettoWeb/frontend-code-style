@@ -137,6 +137,7 @@ function showFirstPoint() {
 
 Допускается и рекомендуется отбивать пустой строкой логически связанные строки кода.
 
+## Условные конструкции
 ### if/else
 Блок `else` нужно начинать на той же строке, на которой закрывается блок `if`:
 
@@ -157,30 +158,43 @@ if (width < 1025) {
 }
 ```
 
-По возможности используем [guard clause](https://refactoring.guru/ru/replace-nested-conditional-with-guard-clauses):
+### Защитное условие (паттерн guard clause)
+Используйте защитное условие для упрощения `if/else` (оно же граничный оператор или [guard clause](https://refactoring.guru/ru/replace-nested-conditional-with-guard-clauses)):
 
 ```js
-// Плохо, лишний `else`
-const assertString = (str) => {
-    if (typeof str === 'string') {
-        return true;
+// Плохо, большой блок кода вложен в if
+function doSomething() {
+    if (isEverythingGood()) {
+        // Много кода в случае, когда все хорошо
+        // ...
+        // ...
+        // ...
+
+        return SOME_VALUE;
     } else {
-        return false;
+        return ANOTHER_VALUE;
     }
 }
 
-// Хорошо. То же самое, но код чище
-const assertString = (str) => {
-    if (typeof str !== 'string') {
-        return false;
+// Хорошо, большой блок кода вне ифа
+function doSomething() {
+    if (!isEverythingGood()) {
+        return ANOTHER_VALUE;
     }
 
-    return true;
+    // Много кода в случае, когда все хорошо
+    // ...
+    // ...
+    // ...
+
+    return SOME_VALUE;
 }
 ```
 
-## Тернарный оператор
-Тернарный оператор:
+Если первым делом обработать исключительный случай, то потом можно не беспокоиться и писать основной код не вкладывая его в `if`. К тому же уйдет и `else`. Кода станет меньше, читать его будет проще.
+
+### Тернарный оператор
+Тернарный оператор — сокращенная форма записи `if/else`. В некоторых случаях код с ним станет проще и короче:
 
 ```js
 // Плохо, слишком много кода
@@ -194,6 +208,23 @@ if (windowWidth < 1025) {
 // Хорошо, кода гораздо меньше
 const stickyHeaderHeight = windowWidth < 1025 ? headerHeight : stickyHeight;
 ```
+
+### Предикаты
+Предикат — выражение, которое возвращает `true` или `false`. Предикат отвечает на какой-то вопрос: «Список пустой?», «Прямоугольник высокий (ширина меньше высоты)?» и т. д.
+
+В коде предикат должен начинаться с `is`:
+
+```js
+// Плохо
+const greaterWidth = (width, height) => width < height;
+const listEmpty = listItems => listItems.length = 0;
+
+// Хорошо
+const isImageTall = (width, height) => width < height;
+const isListEmpty = listItems => listItems.length = 0;
+```
+
+При чтении кода будет сразу ясно, что `isListEmpty(menuItems)` — предикат и возвращает булево значение.
 
 ## Переменные с классами и айдишниками
 Классы и айдишники нужно сохранять в переменные без точки и решетки:
@@ -216,3 +247,4 @@ $addressContainer.on('click', '.' + addressItem, this.setPoint);
 ```js
 $menuItem.removeClass(menuItevActive);
 ```
+
