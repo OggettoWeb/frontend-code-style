@@ -58,22 +58,34 @@ const height = 100;
 const width = 500;
 ```
 
-Когда переменных много, бывает очень сложно разобраться, где заканчивается блок объявлений:
+Когда переменных много, бывает очень сложно разобраться, где заканчивается блок объявлений. Такой подход был популярен во времена `var`, но даже тогда у него было [достаточно](http://dropshado.ws/post/17210606192/varry-var-var) [критики](http://benalman.com/news/2012/05/multiple-var-statements-javascript/):
 
 ```js
+// Плохо, одно ключевое слово на много переменных
 const firstNumber = randomize(firstFrom, firstTo),
     step = randomize(stepFrom, stepTo),
     progression = generateProgression(firstNumber, step, numbersQty),
     emptyIndex = randomize(0, numbersQty),
     rightAnswer = progression[emptyIndex],
     rightAnswerIndex = randomize(0, answersQty),
-    answers = generateAnswers(
-        answersQty,
-        rightAnswer,
-        rightAnswerIndex,
-        generateAnswer.bind(null, rightAnswer)
-    );
+    answers = generateAnswers(answersQty, rightAnswer);
+
+// Хорошо, каждая переменная с ключевым словом
+const firstNumber = randomize(firstFrom, firstTo);
+const step = randomize(stepFrom, stepTo);
+const progression = generateProgression(firstNumber, step, numbersQty);
+const emptyIndex = randomize(0, numbersQty);
+const rightAnswer = progression[emptyIndex];
+const rightAnswerIndex = randomize(0, answersQty);
+const answers = generateAnswers(answersQty, rightAnswer);
 ```
+
+Почему так лучше:
+
+- Код быстрее доходит. Сразу видно ключевое слово, не нужно глазами лезть вверх, чтобы узнать, `let` там или `const`.
+- Не нужно следить, что в конце `;` или `,`.
+- Проще добавлять и менять местами переменные.
+- Не создается новых изменений в гите при замене `,` на `;` и наоборот. Об этом вообще не надо думать.
 
 ## Инкремент/декремент
 Вместо `++` используем более явное `+= 1`.
