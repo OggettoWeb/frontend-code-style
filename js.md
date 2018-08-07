@@ -252,6 +252,26 @@ function isListEmpty(listItems) {
 const isListEmpty = listItems => listItems.length === 0;
 ```
 
+:::tip Правило
+Такая конструкция:
+
+```js
+if (ANYTHING) {
+    return true;
+} else {
+    return false;
+}
+```
+
+Равносильна такой:
+
+```js
+return ANYTHING;
+```
+
+Если `ANYTHING` вычисляется в `true`, то вернуть `true`; иначе вернуть `false` — это избыточно. Достаточно вернуть результат вычисления `ANYTHING`.
+:::
+
 ## Переменные с классами и айдишниками
 Классы и айдишники нужно сохранять в переменные без точки и решетки:
 
