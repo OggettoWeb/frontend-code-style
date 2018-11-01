@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>LESS | Руководство фронтенд-разработчика по оформлению кода</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/frontend-code-style/assets/css/10.styles.1ea3e8f7.css" as="style"><link rel="preload" href="/frontend-code-style/assets/js/app.15227cb4.js" as="script"><link rel="preload" href="/frontend-code-style/assets/js/8.00218003.js" as="script"><link rel="prefetch" href="/frontend-code-style/assets/js/5.c8935070.js"><link rel="prefetch" href="/frontend-code-style/assets/js/1.a44a2abf.js"><link rel="prefetch" href="/frontend-code-style/assets/js/2.6cb3fa15.js"><link rel="prefetch" href="/frontend-code-style/assets/js/3.f626ed05.js"><link rel="prefetch" href="/frontend-code-style/assets/js/4.f0388b93.js"><link rel="prefetch" href="/frontend-code-style/assets/js/6.9bf65305.js"><link rel="prefetch" href="/frontend-code-style/assets/js/7.3a81afa9.js"><link rel="prefetch" href="/frontend-code-style/assets/js/9.aa922795.js">
+    <link rel="stylesheet" href="/frontend-code-style/assets/css/10.styles.1ea3e8f7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/frontend-code-style/" class="home-link router-link-active"><!----><span class="site-name">
+      Руководство фронтенд-разработчика по оформлению кода
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><!----></div></header><div class="sidebar-mask"></div><div class="sidebar"><!----><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Верстка</span><!----></p><ul class="sidebar-group-items"><li><a href="/frontend-code-style/html.html" class="sidebar-link">HTML, БЭМ</a></li><li><a href="/frontend-code-style/less.html" class="active sidebar-link">LESS</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#именование-файnов" class="sidebar-link">Именование файлов</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#отступы" class="sidebar-link">Отступы</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#строки" class="sidebar-link">Строки</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#именование" class="sidebar-link">Именование</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#единицы-измерения" class="sidebar-link">Единицы измерения</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#переменные" class="sidebar-link">Переменные</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#порядок-свойств" class="sidebar-link">Порядок свойств</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#переопредеnение-и-допоnнение-отступов" class="sidebar-link">Переопределение и дополнение отступов</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#псевдоэnементы-before-и-after" class="sidebar-link">Псевдоэлементы before и after</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#кавычки" class="sidebar-link">Кавычки</a></li><li class="sidebar-sub-header"><a href="/frontend-code-style/less.html#фnексбоксы" class="sidebar-link">Флексбоксы</a></li></ul></li><li><a href="/frontend-code-style/forms.html" class="sidebar-link">Верстка форм</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>JS, jQuery</span><!----></p><ul class="sidebar-group-items"><li><a href="/frontend-code-style/js.html" class="sidebar-link">JavaScript</a></li><li><a href="/frontend-code-style/jquery.html" class="sidebar-link">jQuery</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Архитектура</span><!----></p><ul class="sidebar-group-items"><li><a href="/frontend-code-style/commonjs.html" class="sidebar-link">CommonJS</a></li><li><a href="/frontend-code-style/components.html" class="sidebar-link">Компоненты</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="less"><a href="#less" aria-hidden="true" class="header-anchor">#</a> LESS</h1><h2 id="именование-файnов"><a href="#именование-файnов" aria-hidden="true" class="header-anchor">#</a> Именование файлов</h2><p>Файлы стилей (CSS, LESS, SASS и пр.) именуются маленькими буквами через <code>-</code> (kebab-case):</p><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Плохо</span>
+TopMenuStyle.less
+Media.less
+top_menu.less
+
+<span class="token comment"># Хорошо</span>
+top-menu.less
+media.less
+</code></pre></div><h2 id="отступы"><a href="#отступы" aria-hidden="true" class="header-anchor">#</a> Отступы</h2><p>Отступы нужны перед <code>{</code> и после <code>:</code></p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Плохо:</span>
+<span class="token selector">.hader</span><span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span>0 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Хорошо:</span>
+<span class="token selector">.header</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Каждый элемент и модификатор блока нужно отделять пустой строкой:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Плохо, элементам тесновато:</span>
+<span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0 20px<span class="token punctuation">;</span>
+    <span class="token selector">&amp;__item</span> <span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">&amp;__link</span> <span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #F00<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Хорошо, элементам просторно и удобно:</span>
+<span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0 20px<span class="token punctuation">;</span>
+
+    <span class="token selector">&amp;__item</span> <span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">&amp;__link</span> <span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #F00<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Перед каждым блоком так же должен быть отступ:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Плохо, блоки слиплись:</span>
+<span class="token selector">.header</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #CCC<span class="token punctuation">;</span>   
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Хорошо, блоки отделены пустой строкой:</span>
+<span class="token selector">.header</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.menu</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #CCC<span class="token punctuation">;</span>   
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="строки"><a href="#строки" aria-hidden="true" class="header-anchor">#</a> Строки</h2><p>Каждое правило должно быть на отдельной строке:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Плохо, стили для псевдоэлементов на одной строке:</span>
+<span class="token selector">.header</span> <span class="token punctuation">{</span>
+    <span class="token selector">&amp;::before, &amp;::after</span> <span class="token punctuation">{</span>
+        <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Хорошо:</span>
+<span class="token selector">.header</span> <span class="token punctuation">{</span>
+    <span class="token selector">&amp;::before,
+    &amp;::after</span> <span class="token punctuation">{</span>
+        <span class="token comment">// ...</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="именование"><a href="#именование" aria-hidden="true" class="header-anchor">#</a> Именование</h2><p>Если название блока, элемента или модификатора состоит из нескольких слов, то они разделяются дефисом <code>-</code>:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Плохо:</span>
+<span class="token selector">.topMenu</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+<span class="token selector">.top_menu</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+<span class="token comment">// Хорошо:</span>
+<span class="token selector">.top-menu</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre></div><p>Важно, чтобы название БЭМ-сущности сохранялось целиком. Нельзя делить название с помощью ссылки на родительский селектор <code>&amp;</code>:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">/* Плохо: */</span>
+<span class="token selector">.profile</span> <span class="token punctuation">{</span>
+    <span class="token selector">&amp;__card</span> <span class="token punctuation">{</span>
+        &amp;<span class="token punctuation">:</span><span class="token function">extend</span><span class="token punctuation">(</span>.clearfix all<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token selector">&amp;-text</span> <span class="token punctuation">{</span> <span class="token comment">/* Так нельзя! Это уже другой элемент. */</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span> 
+
+<span class="token comment">/* Хорошо: */</span>
+<span class="token selector">.profile</span> <span class="token punctuation">{</span>
+    <span class="token selector">&amp;__card</span> <span class="token punctuation">{</span>
+        &amp;<span class="token punctuation">:</span><span class="token function">extend</span><span class="token punctuation">(</span>.clearfix all<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">&amp;__card-text</span> <span class="token punctuation">{</span> <span class="token comment">/* Так можно. */</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Важно понимать, что в примере выше <code>profile__card</code> и <code>profile__card-text</code> — разные элементы блока <code>profile</code>. Каждый из них принадлежит только блоку <code>profile</code>. Элемент не может принадлежать другому элементу и это нужно отражать в коде.</p><p>К тому же в процессе поддержки при поиске <code>__card-text</code> по проекту ничего не найдется.</p><h2 id="единицы-измерения"><a href="#единицы-измерения" aria-hidden="true" class="header-anchor">#</a> Единицы измерения</h2><p>Первый <code>0</code> в величинах меньше <code>1</code> опускается:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Плохо:</span>
+<span class="token selector">.text</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 0.8em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Хорошо:</span>
+<span class="token selector">.text</span> <span class="token punctuation">{</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> .8em<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="переменные"><a href="#переменные" aria-hidden="true" class="header-anchor">#</a> Переменные</h2><p>Переменные нужно объявлять до импорта файлов, в которых они могут использоваться:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token variable">@fa-grey<span class="token punctuation">:</span></span> #707070<span class="token punctuation">;</span>
+<span class="token variable">@fa-pink<span class="token punctuation">:</span></span> #f20090<span class="token punctuation">;</span>
+
+<span class="token variable">@import</span> <span class="token punctuation">(</span>reference<span class="token punctuation">)</span> <span class="token string">'../../common/less/fonts'</span><span class="token punctuation">;</span>
+
+<span class="token comment">/* Объявленные выше переменные используются в импортируемых ниже файлах */</span>
+<span class="token variable">@import</span> <span class="token string">'./menu'</span><span class="token punctuation">;</span>
+</code></pre></div><p>Переменные, необходимые только в определенном файле или модуле не нужно выносить в общий файл с миксинами и переменными, общими для всех модулей.</p><h2 id="порядок-свойств"><a href="#порядок-свойств" aria-hidden="true" class="header-anchor">#</a> Порядок свойств</h2><p>Код читается проще, когда свойства сгруппированы по смыслу. Так, если мы видим <code>position: absolute</code>, то ожидаем следом увидеть конкретные значения для <code>top</code>, <code>right</code> и т.д. Если они указаны где-то дальше, то их можно пропустить.</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Плохо, разнобой в свойствах:</span>
+<span class="token selector">.some-class</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.6rem<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #f00<span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Хорошо, свойства собраны по смыслу:</span>
+<span class="token selector">.some-class</span> <span class="token punctuation">{</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+    <span class="token property">font-size</span><span class="token punctuation">:</span> 1.6rem<span class="token punctuation">;</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #f00<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+</code></pre></div><p>Рекомендуется такая последовательность групп свойств:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.some-class</span> <span class="token punctuation">{</span>
+    <span class="token comment">// Миксины</span>
+    .<span class="token function">align</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+
+    <span class="token comment">// Генерируемое содержимое</span>
+    <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+
+    <span class="token comment">// Позиционирование</span>
+    <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span> 
+    <span class="token comment">// Расположение от верха и по часовой стрелке</span>
+    <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token property">z-index</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+
+    <span class="token comment">// Блочная модель</span>
+    <span class="token comment">// `display` не нужен для плавающих элементов (float), абсолютно</span>
+    <span class="token comment">// или фиксированно спозиционированных (position: absolute|fixed|sticky)</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token property">height</span><span class="token punctuation">:</span> 5rem<span class="token punctuation">;</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> .6rem<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> 2rem<span class="token punctuation">;</span>
+
+    <span class="token comment">// Свойства текста </span>
+    .<span class="token function">font</span><span class="token punctuation">(</span>3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> #000<span class="token punctuation">;</span>
+    <span class="token property">text-transform</span><span class="token punctuation">:</span> uppercase<span class="token punctuation">;</span>
+
+    <span class="token comment">// Внешний вид</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> <span class="token url">url(../images/loader.gif)</span> no<span class="token operator">-</span>repeat center<span class="token punctuation">;</span>
+    <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">@color-white</span><span class="token punctuation">;</span>
+    <span class="token property">opacity</span><span class="token punctuation">:</span> .5<span class="token punctuation">;</span>
+
+    <span class="token comment">// ...</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="переопредеnение-и-допоnнение-отступов"><a href="#переопредеnение-и-допоnнение-отступов" aria-hidden="true" class="header-anchor">#</a> Переопределение и дополнение отступов</h2><p>Если нужно дополнить или переопределить отступы для медиа-выражения (например, для десктопа задан отступ слева и нужно изменить его для мобилы), то изменяем только необходимые значения, не переписывая свойство целиком:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Задача: для @mobile обнулить левый отступ и добавить правый 3rem.</span>
+
+<span class="token selector">label</span> <span class="token punctuation">{</span>
+    <span class="token property">padding</span><span class="token punctuation">:</span> 0 0 0 10px<span class="token punctuation">;</span>
+
+    <span class="token comment">// Плохо: переопределены все значения, в том числе верхние и нижние,</span>
+    <span class="token comment">// которые к задаче не относятся</span>
+    <span class="token atrule">@media @mobile</span> <span class="token punctuation">{</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span> 0 0 0 3rem<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// Хорошо: переопределены только необходимые значения</span>
+    <span class="token atrule">@media @mobile</span> <span class="token punctuation">{</span>
+        <span class="token property">padding-left</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">padding-right</span><span class="token punctuation">:</span> 3rem<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="псевдоэnементы-before-и-after"><a href="#псевдоэnементы-before-и-after" aria-hidden="true" class="header-anchor">#</a> Псевдоэлементы <code>before</code> и <code>after</code></h2><p>Сначала объявляются общие стили для обоих псевдоэлементов, потом для <code>before</code>, потом для <code>after</code>:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Не правильно: общие стили не вынесены, after расположен перед before</span>
+<span class="token selector">.lines</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #f00<span class="token punctuation">;</span>
+
+    <span class="token selector">&amp;::after</span> <span class="token punctuation">{</span>
+        <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">&amp;::before</span> <span class="token punctuation">{</span>
+        <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Правильно</span>
+<span class="token selector">.lines</span> <span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span> #f00<span class="token punctuation">;</span>
+
+    <span class="token selector">&amp;::before,
+    &amp;::after</span> <span class="token punctuation">{</span>
+        <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">''</span><span class="token punctuation">;</span>
+        <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> 2px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+
+    <span class="token selector">&amp;::before</span> <span class="token punctuation">{</span>
+        <span class="token property">top</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span> 
+    <span class="token punctuation">}</span>   
+
+    <span class="token selector">&amp;::after</span> <span class="token punctuation">{</span>
+        <span class="token property">bottom</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>   
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="кавычки"><a href="#кавычки" aria-hidden="true" class="header-anchor">#</a> Кавычки</h2><p>Используем одинарные кавычки вместо двойных:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Плохо</span>
+<span class="token variable">@import</span> <span class="token string">&quot;vars&quot;</span><span class="token punctuation">;</span>
+<span class="token variable">@mobile<span class="token punctuation">:</span></span> ~<span class="token string">&quot;(max-width: 767px)&quot;</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Хорошо</span>
+<span class="token variable">@import</span> <span class="token string">'vars'</span><span class="token punctuation">;</span>
+<span class="token variable">@mobile<span class="token punctuation">:</span></span> ~<span class="token string">'(max-width: 767px)'</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="фnексбоксы"><a href="#фnексбоксы" aria-hidden="true" class="header-anchor">#</a> Флексбоксы</h2><p>Для флексбоксов используем полифил <a href="https://github.com/jonathantneal/flexibility" target="_blank" rel="noopener noreferrer">flexibility<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. Версия 2.0.1 бажит. Возможно в следующих версиях проблему решат, но пока лучше использовать версию <a href="https://github.com/jonathantneal/flexibility/releases/tag/v1.0.6" target="_blank" rel="noopener noreferrer">1.0.6<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p><p>Версия 2.x работает через модули, версии 1.x нужно подключать руками.</p><p>Для работы flexibility нужно прописывать свойство -js-display: flex дополнительно. В коде этого делать не рекомендуется, лучше подключить плагин <a href="https://github.com/7rulnik/postcss-flexibility" target="_blank" rel="noopener noreferrer">PostCSS Flexibility<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>, который будет работать аналогично автопрефиксеру и сам добавит свойство с префиксом:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token comment">// Плохо</span>
+<span class="token selector">.footer-links</span> <span class="token punctuation">{</span>
+    <span class="token property">-js-display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Хорошо</span>
+<span class="token selector">.footer-links</span> <span class="token punctuation">{</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span> <span class="token comment">/* подключили в сборщике плагин PostCSS Flexibility */</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>PostCSS Flexibility анализирует комментарии. Такой код плагин пропустит и -js-display: flex; не добавится:</p><div class="language-less extra-class"><pre class="language-less"><code><span class="token selector">.footer-links</span> <span class="token punctuation">{</span>
+    <span class="token comment">/* flexibility-disable */</span>
+    <span class="token property">display</span><span class="token punctuation">:</span> flex<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><p>Нужно иметь ввиду, что Вебпак при минификации (запуск <code>webpack -p</code> или вызов <code>UglifyJsPlugin</code>) переводит все лоадеры в режим сжатия. А в режиме сжатия <code>less-loader</code> удаляет комментарии.</p><p>Комментарии нам нужны в последующей обработке CSS, поэтому нужно явно отключить компрессию для <code>less-loader</code>-a:</p><div class="language-js extra-class"><pre class="language-js"><code>loader<span class="token punctuation">:</span> ExtractTextPlugin<span class="token punctuation">.</span><span class="token function">extract</span><span class="token punctuation">(</span><span class="token string">&quot;style&quot;</span><span class="token punctuation">,</span> <span class="token string">'css!postcss!less?compress=false'</span><span class="token punctuation">)</span>
+</code></pre></div></div><div class="page-edit"><!----><!----></div><div class="page-nav"><p class="inner"><span class="prev">
+        ← <a href="/frontend-code-style/html.html" class="prev">
+          HTML, БЭМ
+        </a></span><span class="next"><a href="/frontend-code-style/forms.html">
+          Верстка форм
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/frontend-code-style/assets/js/8.00218003.js" defer></script><script src="/frontend-code-style/assets/js/app.15227cb4.js" defer></script>
+  </body>
+</html>

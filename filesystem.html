@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Работа с файловой системой | Руководство фронтенд-разработчика по оформлению кода</title>
+    <meta name="description" content="">
+    
+    
+    <link rel="preload" href="/frontend-code-style/assets/css/10.styles.1ea3e8f7.css" as="style"><link rel="preload" href="/frontend-code-style/assets/js/app.15227cb4.js" as="script"><link rel="preload" href="/frontend-code-style/assets/js/3.f626ed05.js" as="script"><link rel="prefetch" href="/frontend-code-style/assets/js/5.c8935070.js"><link rel="prefetch" href="/frontend-code-style/assets/js/1.a44a2abf.js"><link rel="prefetch" href="/frontend-code-style/assets/js/2.6cb3fa15.js"><link rel="prefetch" href="/frontend-code-style/assets/js/4.f0388b93.js"><link rel="prefetch" href="/frontend-code-style/assets/js/6.9bf65305.js"><link rel="prefetch" href="/frontend-code-style/assets/js/7.3a81afa9.js"><link rel="prefetch" href="/frontend-code-style/assets/js/8.00218003.js"><link rel="prefetch" href="/frontend-code-style/assets/js/9.aa922795.js">
+    <link rel="stylesheet" href="/frontend-code-style/assets/css/10.styles.1ea3e8f7.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/frontend-code-style/" class="home-link router-link-active"><!----><span class="site-name">
+      Руководство фронтенд-разработчика по оформлению кода
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><!----></div></header><div class="sidebar-mask"></div><div class="sidebar"><!----><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Верстка</span><!----></p><ul class="sidebar-group-items"><li><a href="/frontend-code-style/html.html" class="sidebar-link">HTML, БЭМ</a></li><li><a href="/frontend-code-style/less.html" class="sidebar-link">LESS</a></li><li><a href="/frontend-code-style/forms.html" class="sidebar-link">Верстка форм</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>JS, jQuery</span><!----></p><ul class="sidebar-group-items"><li><a href="/frontend-code-style/js.html" class="sidebar-link">JavaScript</a></li><li><a href="/frontend-code-style/jquery.html" class="sidebar-link">jQuery</a></li></ul></div></li><li><div class="sidebar-group"><p class="sidebar-heading"><span>Архитектура</span><!----></p><ul class="sidebar-group-items"><li><a href="/frontend-code-style/commonjs.html" class="sidebar-link">CommonJS</a></li><li><a href="/frontend-code-style/components.html" class="sidebar-link">Компоненты</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="работа-с-файnовой-системой"><a href="#работа-с-файnовой-системой" aria-hidden="true" class="header-anchor">#</a> Работа с файловой системой</h1><h2 id="графика"><a href="#графика" aria-hidden="true" class="header-anchor">#</a> Графика</h2><p>Файлы именуются маленькими буквами без пробелов.</p><p>Имена файлов должны быть осмысленными. При чтении кода должно быть понятно, что в этом файле. Слова в названиях допускается разделять <code>-</code> или <code>_</code>:</p><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Плохо</span>
+Sidebar-Menu.png
+splashPicture.png
+Top Icon Footer.svg <span class="token comment"># вообще ад</span>
+bitmap.png <span class="token comment"># что тут лежит? Не понятно... Любой графический файл — это bitmap</span>
+
+<span class="token comment"># Хорошо</span>
+ico_sidebar-menu.png
+bg_top-menu.png
+bg_splash.png
+bg_btn-primary.png
+</code></pre></div><h3 id="префиксы-в-именовании-графики"><a href="#префиксы-в-именовании-графики" aria-hidden="true" class="header-anchor">#</a> Префиксы в именовании графики</h3><p>Чтобы отличать содержимое файлов в именах используются префиксы:</p><div class="language-bash extra-class"><pre class="language-bash"><code>ico_ <span class="token comment"># иконки, от слова icon</span>
+bg_  <span class="token comment"># фон, от слова background</span>
+</code></pre></div><h3 id="расширение-файnов"><a href="#расширение-файnов" aria-hidden="true" class="header-anchor">#</a> Расширение файлов</h3><p>Используем трехбуквенные расширения:</p><div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Плохо</span>
+bg_splash.jpeg
+
+<span class="token comment"># Хорошо</span>
+bg_splash.jpg
+</code></pre></div></div><div class="page-edit"><!----><!----></div><!----></div></div></div>
+    <script src="/frontend-code-style/assets/js/3.f626ed05.js" defer></script><script src="/frontend-code-style/assets/js/app.15227cb4.js" defer></script>
+  </body>
+</html>
