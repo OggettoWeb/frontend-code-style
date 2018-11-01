@@ -8,7 +8,8 @@ module.exports = {
                 collapsable: false,
                 children: [
                     '/html',
-                    '/less'
+                    '/less',
+                    '/forms'
                 ]
             },
             {
